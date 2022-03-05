@@ -50,9 +50,30 @@ h1 a {
     color: #dc2626;
 }
 nav {
-    flex: 1 0 100%;
+    position: absolute;
+    /*  with the change of position: absolute; it's no longer in the HTML layout.  = no longer flex item.
+    flex: 1 0 100%; */
+    background-color: #f8fafc;
+    width: 98vw;
+    top: 3.75rem;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
 }
+
+
+/* special class that will show the button when it is clicked (do not add to the html). */
+.show-nav {
+visibility: visible;
+opacity: 1;
+overflow: visible;
+}
+
 .menu {
+    line-height: 3.125rem;
+}
+.menu li {
     line-height: 3.125rem;
 }
 .menu a {
@@ -92,4 +113,40 @@ a better way to develop a drop-down menu is with javascript. */
         width: 1000px;
         margin: 0 auto;
     }
+    .button {
+        display: none;
+    }
+    nav {
+    position: unset;
+    visibility: visible;
+    opacity: 1;
+    overflow: visible;
+    width: unset;
+    }
+    .inner-container > a {
+        order: 1;
+    }
+    .menu {
+       display: flex;
+       justify-content: space-between;
+    }
+
+    .submenu {
+        background-color: #f8fafc;
+        visibility: visible;
+        opacity: 1;
+        overflow: hidden;
+        position: absolute;
+    }
+    .submenu a {
+        display: block;
+        text-align: center;
+        padding: 0 2rem;
+    }
 }
+
+/* TO DO: 
+1) layout the 3 top level links horizontally, side by side. (done).
+2) layout the submenu links as a dropdown for a wider screen. (done).
+3) add focus, or keyboard focus, to the dropdown links. (as class - not done). 
+*/
