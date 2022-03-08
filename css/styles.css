@@ -27,6 +27,9 @@ h2 {
     font-family: effra, sans-serif;
     font-weight: 700;
     font-style: normal;
+    text-align: center;
+    padding-top: 3rem;
+    color: peachpuff;
 }
 
 
@@ -106,6 +109,14 @@ what do you want to change? --> second selector */
 /* this ^^ works to an extent, but the hover state has limitations.
 a better way to develop a drop-down menu is with javascript. */
 
+.menu li:focus-within > ul,
+.menu li > ul:focus {
+    visibility: visible;
+    opacity: 1;
+    overflow: visible;
+    max-height: 225px;
+    display: block;
+}
 
 @media screen and (min-width: 1100px) {
     .inner-container {
